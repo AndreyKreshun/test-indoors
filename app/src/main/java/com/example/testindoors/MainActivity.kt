@@ -29,11 +29,16 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent)
         val bitmap: Bitmap? = null
         val imageView = findViewById<View>(R.id.imageView) as ImageView
+        val imageView2 = findViewById<View>(R.id.imageView2) as ImageView
 
         when(requestCode){
             1 -> if (resultCode == RESULT_OK){
                 val selectedImage: Uri? = imageReturnedIntent?.getData()
                 imageView.setImageURI(selectedImage)
+            }
+            2 -> if (resultCode == RESULT_OK){
+                val selectedImage: Uri? = imageReturnedIntent?.getData()
+                imageView2.setImageURI(selectedImage)
             }
         }
     }
